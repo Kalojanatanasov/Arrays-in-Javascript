@@ -1,0 +1,39 @@
+myNumbers=[];
+var button3 = document.getElementById('Button3');
+function AddNumber() {
+                var number = parseInt(document.getElementById('myTextArea3').value,[10]);
+                myNumbers.push(number);
+                }
+button3.addEventListener('click',function (e) {   
+var count=1;
+var maxxount =0;
+var index=0;
+
+for (var i = 0; i < myNumbers.length; i++)
+            {
+                if (myNumbers[i] == myNumbers[i + 1])
+                {
+                    count++;
+                    index = i;
+                }
+                else
+                {
+                    count = 1;
+                }
+                if (maxxount < count)
+                {
+                    maxxount = count;
+                }
+            }
+  index = index - count + 1;
+ 
+  var results = "{";
+for (var j = index-1; j<=index+count; j++)
+{
+results =results + " " + myNumbers[j] + "," + " ";  
+}
+  results = results +"}";
+document.getElementById("demo3").innerHTML="The longest sequence of number is " + maxxount + " and the array is: " + results;
+  
+
+ },false);
